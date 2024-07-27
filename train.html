@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input to Output</title>
+</head>
+<body>
+    <h1>Type in the Input Field</h1>
+    <input type="text" id="inputField" placeholder="Type something here...">
+    <p>Output: <span id="outputField"></span></p>
+
+    <script>
+        document.getElementById('inputField').addEventListener('input', function() {
+            let inputValue = this.value;
+            document.getElementById('outputField').textContent = inputValue;
+        });
+        
+    </script>
+</body>
+</html>
