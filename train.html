@@ -1,41 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript DOM Manipulation</title>
-  <style>
-    #createButton, #removeButton {
-      display: block;
-      margin: 10px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Toggle</title>
+    <link rel="stylesheet" href="train.css">
 </head>
 <body>
-  <button id="createButton">Create List Item</button>
-  <button id="removeButton">Remove List Item</button>
-  <ul id="myList"></ul>
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
 
-  <script>
-    // Function to create a new li element
-    function createListItem() {
-      const newListItem = document.createElement('li');
-      newListItem.textContent = 'This is a new list item!';
-      newListItem.setAttribute('id', 'myListItem');
-      document.getElementById('myList').appendChild(newListItem);
-    }
-
-    // Function to remove the li element
-    function removeListItem() {
-      const listItemToRemove = document.getElementById('myListItem');
-      if (listItemToRemove) {
-        listItemToRemove.remove();
-      }
-    }
-
-    // Add event listeners to the buttons
-    document.getElementById('createButton').addEventListener('click', createListItem);
-    document.getElementById('removeButton').addEventListener('click', removeListItem);
-  </script>
+    <script src="train.js"></script>
 </body>
 </html>
