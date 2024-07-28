@@ -13,23 +13,24 @@ function display(){
     else{
            
    const newli = document.createElement('li')
-   const edit = document.createElement('button')
+   const edit = document.createElement('span')
     const dlt = document.createElement('button')
     newli.textContent = input.value
     output.appendChild(newli)
     const check = document.createElement('input')
     check.type="checkbox"
+    check.style.height = '30px'
+    check.style.width = '30px'
     newli.appendChild(check)
-    dlt.textContent ="dlt"
     newli.appendChild(dlt)
     dlt.style.fontSize = '13px'
-    dlt.style.height = '20px'
-    dlt.style.width = '20px'
-    edit.textContent ="edit"
+    dlt.style.height = '35px'
+    dlt.style.width = '35px'
+     edit.style.height = '35px'
+     edit.style.width = '35px'
+    dlt.style.backgroundColor = 'white'
     newli.appendChild(edit)
    input.value = ""
-
-    
     check.addEventListener('click', function() {
         completetask.appendChild(newli)
         check.remove()
@@ -40,11 +41,10 @@ function display(){
         newli.remove()
     })
     edit.addEventListener('click',function(){
-        newli.value = input.value
+       input.value = newli.textContent
+       newli.remove()
     })
    }}
-    
-  
   darkmode.addEventListener('click', function(){
     document.body.classList.toggle('dark-mode')
   })
