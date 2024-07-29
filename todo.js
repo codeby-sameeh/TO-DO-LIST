@@ -4,6 +4,8 @@ let output = document.getElementById('Outputfield')
 let button = document.getElementById('add-a-button')
 let completetask = document.getElementById('cmplt-task')
 let darkmode = document.getElementById('dark-mode')
+let main = document.getElementById('main')
+
 
 
 function display(){
@@ -15,9 +17,9 @@ function display(){
    const newli = document.createElement('li')
    const edit = document.createElement('span')
     const dlt = document.createElement('button')
+    const check = document.createElement('input')
     newli.textContent = input.value
     output.appendChild(newli)
-    const check = document.createElement('input')
     check.type="checkbox"
     check.style.height = '30px'
     check.style.width = '30px'
@@ -31,6 +33,12 @@ function display(){
     dlt.style.backgroundColor = 'white'
     newli.appendChild(edit)
    input.value = ""
+   const letters = '0123456789ABCDEF';
+   let color = 'green';
+   for (let i = 0; i < 6; i++) {
+       newli.color += letters[Math.floor(Math.random() * 16)];
+   }
+
     check.addEventListener('click', function() {
         completetask.appendChild(newli)
         check.remove()
@@ -43,8 +51,10 @@ function display(){
     edit.addEventListener('click',function(){
        input.value = newli.textContent
        newli.remove()
-    })
-   }}
+    }) }
+}
+
+
   darkmode.addEventListener('click', function(){
     document.body.classList.toggle('dark-mode')
   })
